@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
+import CustomizedAppBar from './components/CustomizedAppBar';
 
 class App extends Component {
 
@@ -16,14 +13,9 @@ class App extends Component {
         const { appName } = this.state;
 
         return (
+
         <div className="App">
-            <AppBar position='static'>
-                <Toolbar className='appBar'>
-                    <Typography variant="title" color='inherit'>
-                        { appName }
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <CustomizedAppBar appName={ appName }/>
         </div>
         );
     }
