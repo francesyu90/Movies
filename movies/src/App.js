@@ -17,9 +17,9 @@ class App extends Component {
 
         return (
         <div className="App">
-            <AppBar position='static' color='primary'>
-                <Toolbar>
-                    <Typography variant="title" color="inherit">
+            <AppBar position='static'>
+                <Toolbar className='appBar'>
+                    <Typography variant="title" color='inherit'>
                         { appName }
                     </Typography>
                 </Toolbar>
