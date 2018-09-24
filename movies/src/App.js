@@ -9,7 +9,8 @@ import ListUsers from './components/ListUsers';
 class App extends Component {
 
     state = {
-        appName: 'Movies'
+        appName: 'Movies',
+        users: []
     }
 
     render() {
