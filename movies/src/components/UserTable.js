@@ -4,6 +4,9 @@ import { Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/c
 class UserTable extends Component {
 
     render() {
+
+        const { toShow } = this.props;
+
         return (
             <div>
                 <Table>
@@ -18,7 +21,7 @@ class UserTable extends Component {
                             <TableCell>
                                 Username
                             </TableCell>
-                            {true && <TableCell>
+                            {toShow && <TableCell>
                                 # of Games Played
                             </TableCell>}
                         </TableRow>
@@ -34,9 +37,9 @@ class UserTable extends Component {
                             <TableCell>
                                 f
                             </TableCell>
-                            <TableCell>
+                            {toShow && <TableCell>
                                 0
-                            </TableCell>
+                            </TableCell>}
                         </TableRow>
                     </TableBody>
                 </Table>

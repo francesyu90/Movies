@@ -4,18 +4,21 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
 class ControlBar extends Component {
+
     render() {
+
+        const { updateShowStatus, toShow } = this.props;
+
         return (
             <div>
                 <FormControlLabel
                     control={
                         <Switch
-                            // checked={this.state.checkedA}
-                            // onChange={this.handleChange('checkedA')}
+                            onChange={(event) => updateShowStatus(event.target.checked)}
                             value="checkedA"
                         />
                     }
-                    label="Show/Hide the Number of Games Played"
+                    label={toShow? "Hide the Number of Games Played" : "Show the Number of Games Played"}
                 />
             </div>
         );
