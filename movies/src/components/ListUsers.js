@@ -17,12 +17,14 @@ class ListUsers extends Component {
 
     render() {
 
-        const { toShow } = this.state
+        const { toShow } = this.state;
+
+        const { users } = this.props;
 
         return (
             <div>
                 <ControlBar updateShowStatus={this.updateShowStatus} toShow={toShow} />
-                <UserTable toShow={toShow} />
+                <UserTable toShow={toShow} users={users} />
             </div>
         );
     }

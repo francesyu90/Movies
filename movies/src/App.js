@@ -37,7 +37,7 @@ class App extends Component {
                     {/* { JSON.stringify(users[0]) } */}
                 </Grid>
                 <Grid item xs={8}>
-                    <ListUsers user={users} />
+                    <ListUsers users={users} />
                 </Grid>
             </Grid>
         </div>

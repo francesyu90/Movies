@@ -5,7 +5,7 @@ class UserTable extends Component {
 
     render() {
 
-        const { toShow } = this.props;
+        const { toShow, users } = this.props;
 
         return (
             <div>
@@ -26,21 +26,23 @@ class UserTable extends Component {
                             </TableCell>}
                         </TableRow>
                     </TableHead>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell>
-                                F
-                            </TableCell>
-                            <TableCell>
-                                Y
-                            </TableCell>
-                            <TableCell>
-                                f
-                            </TableCell>
-                            {toShow && <TableCell>
-                                0
-                            </TableCell>}
-                        </TableRow>
+                    <TableBody> 
+                        {users.map((user) => (
+                            <TableRow key={user.username}>
+                                <TableCell>
+                                    {user.firstName}
+                                </TableCell>
+                                <TableCell>
+                                    {user.lastName}
+                                </TableCell>
+                                <TableCell>
+                                    {user.username}
+                                </TableCell>
+                                {toShow && <TableCell>
+                                    {user.numOfGamesPlayed}
+                                </TableCell>}
+                            </TableRow>  
+                        ))}      
                     </TableBody>
                 </Table>
             </div>
