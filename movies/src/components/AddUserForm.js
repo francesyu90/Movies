@@ -34,13 +34,18 @@ class AddUserForm extends Component {
         
         event.preventDefault();
 
+        const { addUser, users } = this.props;
+
         const { firstName, lastName, userName } = this.state;
 
-        const { addUser } = this.props;
+        if (users.filter(user => user.username === userName).length === 0) {
 
-        let user = new User(firstName, lastName, userName);
+            let user = new User(firstName, lastName, userName);
 
-        addUser(user);
+            addUser(user);
+        } else {
+            alert("Error: There already exists such username!");
+        }
     }
 
     isDisableButton() {

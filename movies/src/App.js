@@ -33,10 +33,11 @@ class App extends Component {
                 <Grid item xs={1}>
                 </Grid>
                 <Grid item xs={3}>
-                    <AddUserForm addUser={this.addUser}/>
+                    <AddUserForm addUser={this.addUser} users={users} />
+                    {/* { JSON.stringify(users[0]) } */}
                 </Grid>
                 <Grid item xs={8}>
-                    <ListUsers />
+                    <ListUsers user={users} />
                 </Grid>
             </Grid>
         </div>
