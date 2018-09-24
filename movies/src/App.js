@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CustomizedAppBar from './components/CustomizedAppBar';
-import AddItemForm from './components/AddItemForm';
+import AddUserForm from './components/AddUserForm';
 
 import Grid from '@material-ui/core/Grid';
 import ListUsers from './components/ListUsers';
@@ -26,7 +26,7 @@ class App extends Component {
                 <Grid item xs={1}>
                 </Grid>
                 <Grid item xs={3}>
-                    <AddItemForm />
+                    <AddUserForm />
                 </Grid>
                 <Grid item xs={8}>
                     <ListUsers />

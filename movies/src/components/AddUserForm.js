@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-class AddItemForm extends Component {
+class AddUserForm extends Component {
     render() {
         return (
             <div>
@@ -37,4 +37,4 @@ class AddItemForm extends Component {
     }
 }
 
-export default AddItemForm;
+export default AddUserForm;
