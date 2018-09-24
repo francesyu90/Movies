@@ -4,6 +4,7 @@ import CustomizedAppBar from './components/CustomizedAppBar';
 import AddItemForm from './components/AddItemForm';
 
 import Grid from '@material-ui/core/Grid';
+import ListUsers from './components/ListUsers';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
                     <AddItemForm />
                 </Grid>
                 <Grid item xs={8}>
+                    <ListUsers />
                 </Grid>
             </Grid>
         </div>
