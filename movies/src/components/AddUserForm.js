@@ -34,8 +34,6 @@ class AddUserForm extends Component {
         
         event.preventDefault();
 
-        console.log(event);
-
         const { firstName, lastName, userName } = this.state;
 
         const { addUser } = this.props;
