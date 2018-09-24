@@ -13,9 +13,15 @@ class App extends Component {
         users: []
     }
 
+    addUser = (user) => {
+        this.setState((currentState) => ({
+            users: [...currentState.users, user]
+        }));
+    }
+
     render() {
 
-        const { appName } = this.state;
+        const { appName, users } = this.state;
 
         return (
 
@@ -27,7 +33,7 @@ class App extends Component {
                 <Grid item xs={1}>
                 </Grid>
                 <Grid item xs={3}>
-                    <AddUserForm />
+                    <AddUserForm addUser={this.addUser}/>
                 </Grid>
                 <Grid item xs={8}>
                     <ListUsers />

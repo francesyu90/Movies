@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import User from '../data/User';
 
 class AddUserForm extends Component {
 
@@ -14,7 +15,7 @@ class AddUserForm extends Component {
     updateFirstName(event) {
         this.setState({
             firstName: event.target.value
-        })
+        });
     }
 
     updateLastName(event) {
@@ -29,6 +30,28 @@ class AddUserForm extends Component {
         });
     }
 
+    addUserHelper(event) {
+        
+        event.preventDefault();
+
+        console.log(event);
+
+        const { firstName, lastName, userName } = this.state;
+
+        const { addUser } = this.props;
+
+        let user = new User(firstName, lastName, userName);
+
+        addUser(user);
+    }
+
+    isDisableButton() {
+
+        const { firstName, lastName, userName } = this.state;
+
+        return firstName === '' || lastName === '' || userName === '';
+    }
+
     render() {
 
         const { firstName, lastName, userName} = this.state;
@@ -37,7 +60,7 @@ class AddUserForm extends Component {
             <div>
                 <form>
                     <TextField 
-                        required
+                        required = {true}
                         label = "First Name"
                         margin = "normal"
                         value = { firstName }
@@ -45,7 +68,7 @@ class AddUserForm extends Component {
                     />
                     <br />
                     <TextField 
-                        required
+                        required = {true}
                         label = "Last Name"
                         margin = "normal"
                         value = { lastName }
@@ -53,7 +76,7 @@ class AddUserForm extends Component {
                     />
                     <br />
                     <TextField 
-                        required
+                        required = {true}
                         label = "Username"
                         margin = "normal"
                         value = { userName }
@@ -62,7 +85,12 @@ class AddUserForm extends Component {
                     <br />
                     <br />
                     <br />
-                    <Button variant="outlined" color="primary">
+                    <Button 
+                        disabled = {this.isDisableButton()}
+                        variant="outlined" 
+                        color="primary" 
+                        onClick={(event) => this.addUserHelper(event)} 
+                    >
                         Add New User
                     </Button>
                 </form>
